@@ -1,0 +1,4 @@
+interface:
+  display_name: "ModelArk 上手助手"
+  short_description: "引导业务人员完成模型设置、首次出图和图片转视频，并提供下次使用说明"
+  default_prompt: "使用 $modelark-onboarding 帮我检查模型设置，再带我生成第一张图片和第一段视频。"
