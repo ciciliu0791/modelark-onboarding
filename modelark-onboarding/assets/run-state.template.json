@@ -1,0 +1,227 @@
+{
+  "schema_version": 2,
+  "run_id": null,
+  "created_at": null,
+  "scope": {
+    "mode": "full_onboarding",
+    "changes": []
+  },
+  "account_alias": null,
+  "region": null,
+  "project": null,
+  "billing": {
+    "currency": "USD",
+    "activation_route": "seedance_2_5_resource_pack",
+    "usage_mode": "applicable_pack_deduction_then_payg",
+    "quote": null
+  },
+  "steps": [
+    {
+      "id": "MA-00",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-01",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-02",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-03",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-04",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-05",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-06",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-07",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-08",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-09",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-10",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-11",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    },
+    {
+      "id": "MA-12",
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "checked_at": null,
+      "blocker": null,
+      "owner": null,
+      "resume_when": null
+    }
+  ],
+  "model_activation": [
+    {
+      "name": "Seedance 2.5",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seedance 2.0",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seedance 2.0 Fast",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seedream 5.0 Pro",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seedream 5.0 Lite",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seedream 4.5",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seed 2.1",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    },
+    {
+      "name": "Seedaudio 1.0",
+      "resolved_id": null,
+      "state": "NOT_STARTED",
+      "evidence": []
+    }
+  ],
+  "capabilities": {
+    "first_image": {
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "blocker": null,
+      "resume_when": null
+    },
+    "basic_api": {
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "blocker": null,
+      "resume_when": null
+    },
+    "playground": {
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "blocker": null,
+      "resume_when": null
+    },
+    "virtual_reference": {
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "blocker": null,
+      "resume_when": null
+    },
+    "real_person_reference": {
+      "state": "NOT_STARTED",
+      "evidence": [],
+      "blocker": null,
+      "resume_when": null
+    }
+  },
+  "resources": [],
+  "attempts": [],
+  "cost": {
+    "estimate": null,
+    "usage": null,
+    "settled": null
+  },
+  "overall": "NOT_STARTED"
+}
