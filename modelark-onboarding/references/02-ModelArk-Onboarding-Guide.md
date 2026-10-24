@@ -31,7 +31,7 @@ The numeric retry and polling limits below are runbook defaults, not provider SL
 
 ### Fixed model activation list
 
-Activate or verify Seedance 2.5, Seedance 2.0, Seedance 2.0 Fast, Seedream 5.0 Pro, Seedream 5.0 Lite, Seedream 4.5, Seed 2.1, and Seedaudio 1.0. This list is a customer workflow decision, not evidence that every account has access. Do not ask the customer to choose models. Map display names to actual catalog IDs; reuse an eligible existing version, otherwise use the console-recommended current version and record it. Report missing models separately, without silently substituting another product. Use Seedance 2.5 for the video acceptance scenarios. After installation and activation checks, deliver one row per model with status and evidence.
+Activate or verify Seedance 2.5, Seedance 2.0, Seedance 2.0 Fast, Seedream 5.0 Pro, Seedream 5.0 Lite, Seedream 4.5, Seed 2.1, and Seedaudio 1.0. This list is a customer workflow decision, not evidence that every account has access. Do not ask the customer to choose models. Map display names to actual catalog IDs; reuse an eligible existing version, otherwise use the console-recommended current version and record it. Report missing models separately, without silently substituting another product. Use Seedance 2.5 as the onboarding default for video acceptance; explicit user/project model choices take precedence. See [invocation contract](tools.md) for current MCP parameter mappings and authorization rules. After installation and activation checks, deliver one row per model with status and evidence.
 
 ### Execution interfaces
 
@@ -147,14 +147,14 @@ Keep Content filter enabled for new endpoints. The filter documentation explicit
 
 **Preconditions:** Local workspace; MA-06 for authenticated reads. **Owner:** Agent.
 
-**Action:** Prefer an existing supported client. The HTTP example in §3 needs Python 3 and no third-party package. Inspect `python3 --version`; on Windows use the installed Python launcher and record the equivalent command. Do not install tooling solely to follow a tutorial if the API/console route already works.
+**Action:** Prefer the independent Seedream, Seedance and Seedaudio MCP services for supported generation. Use standalone BytePlus Ark CLI only when MCP is unavailable or lacks the required capability; then use a verified BytePlus API/console route if needed. See [tool routing](tools.md). Prefer an existing supported client. The HTTP example in §3 needs Python 3 and no third-party package. Inspect `python3 --version`; on Windows use the installed Python launcher and record the equivalent command. Do not install tooling solely to follow a tutorial if the API/console route already works.
 
 Optional BytePlus Ark CLI installation is documented as:
 
 ```bash
 npm install -g @byteplus/ark-cli
-arkcli --version
-arkcli --help
+ARKCLI_NO_UPDATE_NOTIFIER=1 ARKCLI_CALLER_TYPE=ai_agent ARKCLI_CALLER_NAME=codex ARKCLI_SKILL_NAME=arkcli-shared arkcli --version
+ARKCLI_NO_UPDATE_NOTIFIER=1 ARKCLI_CALLER_TYPE=ai_agent ARKCLI_CALLER_NAME=codex ARKCLI_SKILL_NAME=arkcli-shared arkcli --help
 ```
 
 This is an installation reference, not a command executed for this draft. Check current package requirements and record the installed version before adopting it. The installation source is a Coding Plan setup page; it verifies package installation, not Seedance profile configuration. Do not select a Coding Plan profile for video generation just because that page does. [S13]
@@ -162,12 +162,11 @@ This is an installation reference, not a command executed for this draft. Check 
 Once a correct BytePlus profile has been confirmed, the command reference documents:
 
 ```bash
-arkcli doctor account
+ARKCLI_NO_UPDATE_NOTIFIER=1 ARKCLI_CALLER_TYPE=ai_agent ARKCLI_CALLER_NAME=codex ARKCLI_SKILL_NAME=arkcli-doctor arkcli doctor account
 ```
 
 Use it only after checking local help and confirming the expected identity/region. Do not add auto-repair or `--auto-bind` options to a read-only preflight. If CLI behavior or profile selection is unclear, use console reads and the official API instead. [S14]
 
-The original [Volcengine CLI repository](https://github.com/volcengine/volcengine-cli) documents `ve`, including `ve version`; its examples alone do not establish BytePlus routing. Do not apply its `cn-beijing` setup to this account. No compatible CLI version was installed or runtime-tested here; Q07 records that limit. [S12]
 
 **Success evidence:** Client versions known; DNS/TLS reachability to the selected service and an authorized read succeed. A reachable documentation page or local version number alone is not account connectivity.
 
@@ -181,7 +180,7 @@ The original [Volcengine CLI repository](https://github.com/volcengine/volcengin
 
 **Action:** Prepare a simple non-sensitive prompt and model-supported duration/resolution. Obtain a current estimate from the console calculator or official pricing source; retain inputs and estimate timestamp. Model, resolution and input type affect pricing. Do not convert raw tokens into pack deductions using an assumed 1:1 ratio. [S15]
 
-Run the basic API example in §3 only after confirming the exact request and estimated cost. Save the task ID immediately. Poll under §5, then save and validate the output.
+Reuse a successful MCP/CLI task when its BytePlus API task and configuration evidence satisfy the same acceptance criteria. Otherwise run the basic API example in §3 only after confirming the exact request and estimated cost. Save the task ID immediately. Poll under §5, then save and validate the output.
 
 Separately open Playground, select the same intended model and perform one necessary basic test. Record the UI result/record identifier if exposed. Do not invent an API task ID when the UI does not expose one. An API success does not prove Playground access, and vice versa. Reuse existing valid test evidence when it proves the same acceptance criteria and the configuration has not changed.
 
@@ -223,7 +222,7 @@ Use the request shapes in §4 with an official BytePlus signing client or API Ex
 
 **Preconditions:** MA-10; project-compatible inference target; valid rights and authorization for the necessary test. **Owner:** Agent.
 
-**Action:** Build a request with the approved asset URI in the appropriate image reference field. Prompt references use media type and index, such as `Image 1`; preserve the order of references. The documented pattern is `asset://<asset-id>`. Use a verified model/endpoint from MA-06, not an old screenshot's ID. [S07]
+**Action:** Build a request with the approved asset URI in the appropriate image reference field. Use the selected model/tool reference syntax documented in [tools.md](tools.md); preserve the order of references. The documented pattern is `asset://<asset-id>`. Use a verified model/endpoint from MA-06, not an old screenshot's ID. [S07]
 
 Run one virtual-reference test and one authorized real-person-reference test as separate scenarios. Preserve current security controls. If a request is rejected, inspect the returned error, project alignment and rights; do not claim that a custom endpoint removes restrictions.
 

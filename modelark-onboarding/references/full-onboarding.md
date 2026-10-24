@@ -48,7 +48,7 @@
 
 完整记录使用模板中的 MA 步骤、八模型和能力状态：NOT_STARTED、READY、RUNNING、WAITING_USER、WAITING_EXTERNAL、BLOCKED、FAILED、VERIFIED、REUSED。REUSED 也须有当前复核证据。
 
-每次写入追加 attempt（场景、计划、开始时间、请求指纹、资源/任务 ID、状态、下一动作）；不覆盖旧尝试。提交结果不明时保持 RUNNING 并设置 outcome_unknown=true、恢复条件为服务端核对，禁止因无 ID 就重发。素材每 10 秒查询、单次工作最多 10 分钟；视频每 10 秒查询、最多 20 分钟。只读瞬时失败最多重试 3 次，遵守 Retry-After。截止后保存 WAITING_EXTERNAL，不取消或重建。KYC/商务等待不使用高频轮询；仅用户继续时回查，后续自动检查需另有明确调度请求。
+每次写入追加 attempt（场景、计划、开始时间、请求指纹、资源/任务 ID、状态、下一动作）；不覆盖旧尝试。提交结果不明时保持 RUNNING 并设置 outcome_unknown=true、恢复条件为服务端核对，禁止因无 ID 就重发。素材每 10 秒查询、单次工作最多 10 分钟；视频每 10 秒查询、最多 20 分钟。只读瞬时失败最多重试 3 次，遵守 Retry-After。截止后步骤保存 WAITING_EXTERNAL，attempt 保留 RUNNING 与原 ID；不取消或重建，下次先查询，不能因步骤处于等待就新建尝试。KYC/商务等待不使用高频轮询；仅用户继续时回查，后续自动检查需另有明确调度请求。
 
 每个等待项记录责任角色、下一动作及可观察的恢复条件，不必收集个人联系方式。无真实授权素材时记录 WAITING_USER，不编造真人或授权。报告不得含凭据、证件、活体、认证 token 或签名私有 URL。
 
