@@ -14,7 +14,7 @@ def inspect(workspace):
              Path.home() / '.agents/skills',
              Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))) / 'skills']
     skills = []
-    for name in ('seedream', 'seedance', 'volcengine-cli', 'arkcli-shared'):
+    for name in ('seedream', 'seedance', 'arkcli-shared'):
         for root in roots:
             entry = root / name / 'SKILL.md'
             if not entry.is_file():
@@ -27,8 +27,17 @@ def inspect(workspace):
                         missing.append(str(target))
             skills.append({'name': name, 'path': str(entry), 'missing_local_references': missing})
     return {'platform': platform.system(), 'python': platform.python_version(),
-            'commands': {x: shutil.which(x) for x in ('python3', 'node', 'npm', 've', 'arkcli', 'ffprobe')},
+            'commands': {x: shutil.which(x) for x in ('python3', 'node', 'npm', 'arkcli', 'ffprobe')},
             'skills': skills, 'provider_tools': 'inspect current session tool catalog separately',
+            'mcp_discovery': {
+                'seedream': {'status': 'not_checked'},
+                'seedance': {'status': 'not_checked'},
+                'seedaudio': {'status': 'not_checked',
+                              'tools_to_find': ['seedaudio_status', 'seedaudio_generate',
+                                                'seedaudio_generate_variations']}},
+            'cli_distribution': {'required_package': '@byteplus/ark-cli',
+                                 'required_command': 'arkcli',
+                                 'verification': 'not_checked'},
             'account_authenticated': 'not_checked', 'generation_ready': 'not_checked'}
 
 
